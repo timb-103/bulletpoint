@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bullet point copy and paste (•)</title>
+    <meta
+      name="description"
+      content="Copy the bullet point symbol as plain text to use in your text."
+    />
+    <link rel="icon" href="img/icons/favicon.ico" type="image/x-icon" />
+    <script
+      defer
+      data-domain="bulletpointcopy.com"
+      src="https://plausible.io/js/script.js"
+    ></script>
+    <style>
+      body {
+        font-family: ui-sans-serif, system-ui, sans-serif, Apple Color Emoji,
+          Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+        margin: 0;
+        padding: 20px;
+        box-sizing: border-box;
+      }
+
+      main {
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+      }
+
+      .container {
+        max-width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .container-body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 50px;
+      }
+
+      button {
+        width: 100%;
+        padding: 5px 10px;
+        cursor: pointer;
+      }
+
+      .why {
+        text-align: left;
+        max-width: 400px;
+        margin: 40px auto;
+      }
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <!-- title-->
+      <h1>Bullet point copy and paste</h1>
+      <p>Copy the bullet point symbol as plain text to use in your text.</p>
+      <div class="container">
+        <div class="container-body">
+          <p>•</p>
+        </div>
+        <button id="copy-button">COPY BULLET POINT</button>
+      </div>
+
+      <div class="why">
+        <h2>Why use bullet points?</h2>
+        <p>
+          Because X (twitter) will de-rank your post if it has a link in it.
+          <br /><br />Replace the full stop with a bullet point and while it's
+          not linked, it still looks good.<br /><br />
+          Plus it's easy for people to copy and paste then replace the bullet
+          point with a full stop.
+        </p>
+      </div>
+
+      <p>Built by <a href="https://timb.com">timb.com</a></p>
+    </main>
+
+    <script>
+      const button = document.getElementById("copy-button");
+      const bulletPoint = "•";
+
+      button.addEventListener("click", () => {
+        navigator.clipboard
+          .writeText(bulletPoint)
+          .then(() => {
+            alert("Bullet point copied!");
+          })
+          .catch((err) => {
+            console.error("Failed to copy text: ", err);
+          });
+      });
+    </script>
+  </body>
+</html>
